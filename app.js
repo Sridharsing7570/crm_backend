@@ -20,7 +20,10 @@ if (process.env.NODE_ENV === "development") {
 }
 
 // Enable CORS
-app.use(cors());
+app.use(cors({
+    origin: "*",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+}));
 
 // Mount routers
 app.use("/api/auth", auth);
